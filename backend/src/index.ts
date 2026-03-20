@@ -4,6 +4,8 @@ import "dotenv/config";
 
 import tenantRoutes from "./routes/tenant.routes.js";
 import productRoutes from "./routes/product.routes.js";
+import nodeRoutes from "./routes/node.routes.js";
+import materialRoutes from "./routes/material.routes.js";
 
 const app = express();
 const PORT = process.env.PORT || 8000;
@@ -14,6 +16,8 @@ app.use(express.json());
 // API Routes
 app.use("/api/tenants", tenantRoutes);
 app.use("/api/products", productRoutes);
+app.use("/api/nodes", nodeRoutes);
+app.use("/api/materials", materialRoutes);
 
 app.get("/health", (req: Request, res: Response) => {
   res
